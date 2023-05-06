@@ -134,6 +134,8 @@ def preparePath(filepath):
 
         else:
             failedJsons.append(filepath)
+        
+        return None
             
     
     
