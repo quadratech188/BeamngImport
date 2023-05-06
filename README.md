@@ -7,7 +7,7 @@ Then, convert all the .dds files to .png (Blender doesn't support dds).
 
 You then select the folder the files are in in the Addon Preferences Menu. (Details in the Menu)
 
-Press the 'Import new model' button.
+Press the 'Import New Model' button.
 
 ![addonDemo](https://user-images.githubusercontent.com/117572566/200167853-6d29c51d-87c2-4b20-85cb-e01124698e98.png)
 
