@@ -119,7 +119,7 @@ def preparePath(filepath):
             
             # Does .dds exist?
             
-            filepath = filepath[:-4] + ".png"
+            filepath = filepath[:-4] + ".dds"
             
             if os.path.isfile(filepathBase + filepath):
                 fullFilepath = filepathBase + filepath
