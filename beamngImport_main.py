@@ -127,7 +127,7 @@ def preparePath(filepath):
 
             elif os.path.isfile(filepathBase + "/vehicles/" + vehicleFolder + filepath):
                 fullFilepath = filepathBase + "/vehicles/" + vehicleFolder + filepath
-                ddsTextures.append(fullFile)
+                ddsTextures.append(fullFilepath)
             
             else:
                 failedTextures.append(filepath)
