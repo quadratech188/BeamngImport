@@ -51,6 +51,7 @@ bsdfConnections = {0 : ["colorPaletteMap_sprt", "diffuseColor", "baseColorFactor
 collapse = True
 
 failedTextures = []
+ddsTextures = []
 failedJsons = []
 
 addonPath = os.path.dirname(__file__)
@@ -115,7 +116,21 @@ def preparePath(filepath):
         print("Couldn't find file: " + filepath)
         fullFilepath = None
         if filepath.endswith(".png"):
-            failedTextures.append(filepath)
+            
+            # Does .dds exist?
+            
+            filepath = filepath[:-4] + ".png"
+            
+            if os.path.isfile(filepathBase + filepath):
+                fullFilepath = filepathBase + filepath
+                ddsTextures.append(fullFilepath)
+
+            elif os.path.isfile(filepathBase + "/vehicles/" + vehicleFolder + filepath):
+                fullFilepath = filepathBase + "/vehicles/" + vehicleFolder + filepath
+                ddsTextures.append(fullFile)
+            
+            else:
+                failedTextures.append(filepath)
 
         else:
             failedJsons.append(filepath)
@@ -692,11 +707,18 @@ def loadTextures(vehicle, vehicleName, useCommon, firstLoaded, objects):
 
     
    
-   
+    if failedTextures != []:
     
-    print("Failed to load these textures:")
+        print("Failed to load these textures:")
    
     for texture in failedTextures:
+        print(texture + "\n")
+        
+        
+    if ddsTextures != []:
+        print("These textures are still .dds:")
+    
+    for texture in ddsTextures:
         print(texture + "\n")
         
     print("Failed to read these JSON files:")
