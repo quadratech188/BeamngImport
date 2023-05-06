@@ -10,7 +10,7 @@ TODO
 
 - Find UV maps by order
 
-- Work out autocompleting file structure
+- Work out autocompleting file structure (can throw errors in some cases: go to the material it couldn't read, and append vehicles/(vehicle name)/)
 
 - Work out alphas for materials with both colorMap and diffuseColor
     (currently diffuseColor overrides colorMap)
@@ -20,7 +20,6 @@ TODO
 - Iterate based on objects
 
 - Sort out alpha for Materials v1.0
-
 
 
 """
@@ -100,8 +99,9 @@ def preparePath(filepath):
 
     path = os.path.normpath(filepath)
     splitPath = path.split(os.sep)
-
-    print(splitPath)
+    
+    if len(splitPath) == 1:
+        splitPath = ("", "vehicles", "common", splitPath[0])
     
     vehicleFolder = splitPath[2]
 
