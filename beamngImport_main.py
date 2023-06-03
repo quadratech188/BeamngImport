@@ -50,6 +50,9 @@ bsdfConnections = {0 : ["colorPaletteMap_sprt", "diffuseColor", "baseColorFactor
 
 collapse = True
 
+failedTextures = []
+ddsTextures = []
+failedJsons = []
 
 
 addonPath = os.path.dirname(__file__)
