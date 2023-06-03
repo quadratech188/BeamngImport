@@ -742,6 +742,7 @@ def loadTextures(vehicle, vehicleName, useCommon, firstLoaded, objects):
 
 
 def loadNew(name, vehicle, filepath, useCommon):
+    global failedTextures, ddsTextures, failedJsons
     failedTextures = []
     ddsTextures = []
     failedJsons = []
@@ -802,6 +803,7 @@ def loadNew(name, vehicle, filepath, useCommon):
 
 
 def reload(vehicletype, collection, useCommon):
+    global failedTextures, ddsTextures, failedJsons
     failedTextures = []
     ddsTextures = []
     failedJsons = []
