@@ -50,9 +50,7 @@ bsdfConnections = {0 : ["colorPaletteMap_sprt", "diffuseColor", "baseColorFactor
 
 collapse = True
 
-failedTextures = []
-ddsTextures = []
-failedJsons = []
+
 
 addonPath = os.path.dirname(__file__)
 
@@ -741,6 +739,9 @@ def loadTextures(vehicle, vehicleName, useCommon, firstLoaded, objects):
 
 
 def loadNew(name, vehicle, filepath, useCommon):
+    failedTextures = []
+    ddsTextures = []
+    failedJsons = []
     
     # Find imported objects/images
     
@@ -798,6 +799,9 @@ def loadNew(name, vehicle, filepath, useCommon):
 
 
 def reload(vehicletype, collection, useCommon):
+    failedTextures = []
+    ddsTextures = []
+    failedJsons = []
     
     getSkinApplier(collection.name)
 
