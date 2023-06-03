@@ -103,6 +103,8 @@ def preparePath(filepath):
     
     if len(splitPath) == 1:
         splitPath = ("", "vehicles", "common", splitPath[0])
+        
+        filepath = "/vehicles/common/" + splitPath[0]
     
     vehicleFolder = splitPath[2]
 
@@ -123,14 +125,17 @@ def preparePath(filepath):
             
             if os.path.isfile(filepathBase + filepath):
                 fullFilepath = filepathBase + filepath
-                ddsTextures.append(fullFilepath)
+                if fullFilepath not in ddsTextures:
+                    ddsTextures.append(fullFilepath)
 
             elif os.path.isfile(filepathBase + "/vehicles/" + vehicleFolder + filepath):
                 fullFilepath = filepathBase + "/vehicles/" + vehicleFolder + filepath
-                ddsTextures.append(fullFilepath)
+                if fullFilepath not in ddsTextures:
+                    ddsTextures.append(fullFilepath)
             
             else:
-                failedTextures.append(filepath)
+                if filepath not in failedTextures:
+                    failedTextures.append(filepath)
 
         else:
             failedJsons.append(filepath)
