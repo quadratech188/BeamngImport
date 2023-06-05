@@ -414,12 +414,12 @@ def makeLayer(tree, name, layer, location, materialName):
                 if "specularMap" in layer:
                     colorMap = createTexture(tree, layer, "specularMap(Alpha)", layer["specularMap"], texturesLocation)
                     tree.links.new(colorMap.outputs[1], sprtOutput)
+                """
 
-                
                 if "colorMap" in layer:
                     colorMap = createTexture(tree, layer, "colorMap(Alpha)", layer["colorMap"], texturesLocation)
                     tree.links.new(colorMap.outputs[1], sprtOutput)
-                    
+                """
                 
                 if "diffuseColor" in layer:
                     alpha = createGeneral(tree, "diffuseColor(Alpha)", "ShaderNodeValue", texturesLocation)
