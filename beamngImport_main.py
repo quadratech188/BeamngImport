@@ -107,7 +107,7 @@ def preparePath(filepath):
 
         splitPath = ("", "vehicles", "common", splitPath[0])
         
-    
+
     vehicleFolder = splitPath[2]
 
     if os.path.isfile(filepathBase + filepath):
@@ -410,11 +410,12 @@ def makeLayer(tree, name, layer, location, materialName):
                 pass
             
             if textureName == "alpha_sprt":
+                """
                 if "specularMap" in layer:
                     colorMap = createTexture(tree, layer, "specularMap(Alpha)", layer["specularMap"], texturesLocation)
                     tree.links.new(colorMap.outputs[1], sprtOutput)
 
-                """
+                
                 if "colorMap" in layer:
                     colorMap = createTexture(tree, layer, "colorMap(Alpha)", layer["colorMap"], texturesLocation)
                     tree.links.new(colorMap.outputs[1], sprtOutput)
