@@ -103,9 +103,10 @@ def preparePath(filepath):
     splitPath = path.split(os.sep)
     
     if len(splitPath) == 1:
+        filepath = "/vehicles/common/" + splitPath[0]
+
         splitPath = ("", "vehicles", "common", splitPath[0])
         
-        filepath = "/vehicles/common/" + splitPath[0]
     
     vehicleFolder = splitPath[2]
 
