@@ -410,17 +410,26 @@ def makeLayer(tree, name, layer, location, materialName):
                 pass
             
             if textureName == "alpha_sprt":
+
+                # I should really rewrite this whole thing
+
                 """
                 if "specularMap" in layer:
                     colorMap = createTexture(tree, layer, "specularMap(Alpha)", layer["specularMap"], texturesLocation)
                     tree.links.new(colorMap.outputs[1], sprtOutput)
-                """
-
+                
+                
                 if "colorMap" in layer:
                     colorMap = createTexture(tree, layer, "colorMap(Alpha)", layer["colorMap"], texturesLocation)
                     tree.links.new(colorMap.outputs[1], sprtOutput)
                 """
-                
+
+                if "specular" in layer:
+                    alpha = createGeneral(tree, "specular(Alpha)", "ShaderNodeValue", texturesLocation)
+                    alpha.outputs[0].default_value = layer["specular"][3]
+                    tree.links.new(alpha.outputs[0], sprtOutput)
+
+                """
                 if "diffuseColor" in layer:
                     alpha = createGeneral(tree, "diffuseColor(Alpha)", "ShaderNodeValue", texturesLocation)
                     alpha.outputs[0].default_value = layer["diffuseColor"][3]
