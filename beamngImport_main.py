@@ -200,7 +200,7 @@ def createTexture(tree, layer, name, filename, location):
             textureNode.image.colorspace_settings.name = "Non-Color"
             
         else:
-            textureNode.image.colorspace_settings.name = "sRGB"
+            textureNode.image.colorspace_settings.name = "Raw"
         
     # Find UV map    
     
