@@ -24,3 +24,10 @@ Share Identical Materials: Use the same material whenever possible, NOT FULLY IM
 When you press 'Import new model', all the meshes will be put into a collection.
 
 Select Collection: The collection that holds the vehicle meshes
+
+
+
+
+
+# Note
+This project is very jank. it can't deal with errors properly, and I haven't figured out all the logic behind the (terribly complicated) material system yet. Beware.
