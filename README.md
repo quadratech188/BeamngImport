@@ -30,4 +30,4 @@ Select Collection: The collection that holds the vehicle meshes
 
 
 # Note
-This project is very jank. it can't deal with errors properly, and I haven't figured out all the logic behind the (terribly convoluted) material system yet. Beware.
+This project is very jank. it can't deal with errors properly, and I haven't figured out all the logic behind the (fiendishly convoluted) material system yet. Beware.
